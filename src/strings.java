@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Locale;
 
@@ -95,5 +96,15 @@ public class strings {
         System.out.println((int) (random * 100)); // Aqui quitaremos todos los decimales
 
         // Fomato de numeros
+        Locale locale = new Locale("es", "ES");
+        NumberFormat nf = NumberFormat.getCurrencyInstance(locale);
+        nf.format(1099.99);
+        String resultat = nf.format(1099.99);
+        System.out.println(resultat);
+
+        NumberFormat porcentaje = NumberFormat.getPercentInstance(Locale.US);
+        porcentaje.format(0.123456789);
+        String resultat2 = porcentaje.format(0.123456789);
+        System.out.println(resultat2);
     }
 }
